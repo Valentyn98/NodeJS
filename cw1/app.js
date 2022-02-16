@@ -44,8 +44,7 @@ fs.writeFile(path.join(__dirname,'one','text3.txt'),//создаем
         console.log(err);
         throw err;
     }
-})
-fs.readFile(path.join(__dirname,'one','text3.txt'), //читтаем
+    fs.readFile(path.join(__dirname,'one','text3.txt'), //читтаем
     'utf8',(err,data)=>{
         if(err){
             console.log(err)
@@ -71,7 +70,7 @@ fs.readFile(path.join(__dirname,'one','text3.txt'), //читтаем
                          })
                  })
          })
-    })
+    }) })
 // 3. Створіть папку (можете вручну) напишіть скріпт який створить в ній якись дані
 // (можуть бути нові папки і файли(в файли запишіть якусь дату) )
 // і напишіть функцію яка буде зчитувати папку і перевіряти якщо дані які в ній лежать -
