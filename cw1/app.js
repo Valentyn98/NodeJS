@@ -21,9 +21,8 @@ const fs = require('fs')
         console.log(err);
         throw err;
     }
-})
 //1.2file + info from text.txt
-fs.readFile(path.join(__dirname,'one','text.txt'),
+    fs.readFile(path.join(__dirname,'one','text.txt'),
     'utf8',(err,data)=>{
     if(err){
         console.log(err)
@@ -36,6 +35,7 @@ fs.readFile(path.join(__dirname,'one','text.txt'),
             }
             console.log(data)
         })
+    })
 })
 //2.1 file
 fs.writeFile(path.join(__dirname,'one','text3.txt'),//создаем
