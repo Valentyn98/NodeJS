@@ -1,0 +1,3 @@
+name:Nikola
+ age:23
+ city:Lviv
