@@ -93,6 +93,13 @@ fs.mkdir(path.join(__dirname, 'one','papka'),
                     if(err){
                         console.log('ERROR')
                     }
+
+                    // fs.rename('cw1/one/papka', 'cw1/one/NEWpapka', (err) => {
+                    //     if (err) {
+                    //         console.error(err)
+                    //     }
+                    //     //готово
+                    // })
                     fs.rename(path.join((__dirname,'one','papka', path.join(__dirname,'one','NEWpapka'),(err)=>{
                         if(err){
                             console.log("ERROR")
