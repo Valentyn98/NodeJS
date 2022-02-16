@@ -82,20 +82,24 @@ fs.mkdir(path.join(__dirname, 'one','papka'),
     (err)=>{
     if(err){
         console.log(err);
+        throw err
     }
     fs.writeFile(path.join(__dirname,'one','papka','FileP.txt'),"someData",(err)=>{
         if(err){
             console.log(err);
+            throw err
         }
         fs.readdir(path.join(__dirname, 'one','papka'),(err,data)=>{
             if(data){
                 fs.truncate(path.join(__dirname,'one','papka','FileP.txt'),(err)=>{
                     if(err){
                         console.log('ERROR')
+                        throw err
                     }
                     fs.rename(path.join(__dirname,'one','papka'),path.join(__dirname,'one','NEWpapka'),(err)=>{
                         if(err){
                             console.log("ERROR")
+                            throw err
                         }
                     })
                 })
