@@ -100,11 +100,11 @@ fs.mkdir(path.join(__dirname, 'one','papka'),
                     //     }
                     //     //готово
                     // })
-                    fs.rename(path.join((__dirname,'one','papka', path.join(__dirname,'one','NEWpapka'),(err)=>{
+                    fs.rename(path.join(__dirname,'one','papka'),path.join(__dirname,'one','NEWpapka'),(err)=>{
                         if(err){
                             console.log("ERROR")
                         }
-                    })))
+                    })
                 })
             }
         })
