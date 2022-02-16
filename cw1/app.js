@@ -72,5 +72,35 @@ fs.readFile(path.join(__dirname,'one','text3.txt'), //читтаем
                  })
          })
     })
-//3.Делаю
+// 3. Створіть папку (можете вручну) напишіть скріпт який створить в ній якись дані
+// (можуть бути нові папки і файли(в файли запишіть якусь дату) )
+// і напишіть функцію яка буде зчитувати папку і перевіряти якщо дані які в ній лежать -
+// це файли тоді вам потрібно їх очистити, але не видаляти, якщо дані - це папки, вам потрібно їх перейменувати і додати до назви префікс _new
 
+
+fs.mkdir(path.join(__dirname, 'one','papka'),
+    (err)=>{
+    if(err){
+        console.log(err);
+    }
+    fs.writeFile(path.join(__dirname,'one','papka','FileP.txt'),"someData",(err)=>{
+        if(err){
+            console.log(err);
+        }
+        fs.readdir(path.join(__dirname, 'one','papka'),(err,data)=>{
+            if(data){
+                fs.truncate(path.join(__dirname,'one','papka','FileP.txt'),(err)=>{
+                    if(err){
+                        console.log('ERROR')
+                    }
+                    fs.rename(path.join((__dirname,'one','papka', path.join(__dirname,'one','NEWpapka'),(err)=>{
+                        if(err){
+                            console.log("ERROR")
+                        }
+                    })))
+                })
+            }
+        })
+    })
+    }
+    )
