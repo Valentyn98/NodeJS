@@ -8,11 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/signin" method="post">
-    ID        <input type="text" name="id">
-    email     <input type="text" name="email">
-    password  <input type="text" name="password">
-    <input type="submit" value="OK">
-</form>
+{{#each users}}
+    <div> Firstname:{{this.id}} </div>
+    <div> Email:{{this.email}}</div>
+    <div> Password:{{this.password}}</div>
+
+{{/each}}
+
+
+
 </body>
 </html>
