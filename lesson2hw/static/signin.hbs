@@ -8,11 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-        <h1>SIGNIN</h1>
-
-{{#each sigin}}
-    <div> Email:{{this.email}}</div>
-    <div> Email:{{this.password}}</div>
-    {{/each}}
+<form action="/signin" method="post">
+    email     <input type="text" name="email">
+    password  <input type="text" name="password">
+    <input type="submit" value="OK">
+</form>
 </body>
 </html>
