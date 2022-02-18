@@ -115,9 +115,9 @@ app.get('/signin',((req, res) =>{
 } ))
 
 app.post('/signin',((req, res) => {
-    let info = users.find(user => user.email === req.body.email && user.password === req.body.password);
-    if (info){
-        res.redirect(`/users/${user.id}`);
+    let userId = users.find(user => user.email === req.body.email && user.password === req.body.password);
+    if (userId){
+        res.redirect(`/users/${userId.id}`);
     }else {
         res.redirect('/error');
     }
