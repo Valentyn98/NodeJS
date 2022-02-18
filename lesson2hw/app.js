@@ -1,77 +1,5 @@
-// const fs = require('fs')
-// const path = require('path')
 
-// const readStream = fs.createReadStream(path.join(__dirname,'file'));
-// readStream.on('data',(chunk)=>{
-//     console.log(chunk.toString()) //читаем большие Дата
-// })
-
-
-// const writeStream = fs.createWriteStream(path.join(__dirname, 'fileText.txt'));
-// for (let i = 0; i < 250; i++){
-//     writeStream.write('NewDATA\n',(err)=>{
-//         if (err)
-//             console.log(err)
-//         throw err
-//     })
-// }
-//создали фалй и записали тудаинфу
-// writeStream.end()
-//нужно завершать!
-
-
-// const readStream = fs.createReadStream(path.join(__dirname,'fileText.txt'));
-// const writeStream = fs.createWriteStream(path.join(__dirname, 'file'));
-// readStream.on('data',(chunk)=>{
-//     writeStream.write(chunk, (err) =>{
-//         if(err){
-//             console.log(err)
-//             throw err
-//         }
-//     })
-//     writeStream.end()
-//нужно завершать!
-// })
-//взяли с одного файла и записалив другой ****
-
-
-//*********************
-// const readStream = fs.createReadStream(path.join(__dirname,'fileText.txt'));
-// const writeStream = fs.createWriteStream(path.join(__dirname, 'file'));
-//
-// readStream.pipe(writeStream)
-//легкий вариант чтения )***************
-
-//*********************1.05.00
-// const express = require('express')
-// const app = express()
-// const users = [
-//     {
-//         name:'asd',
-//         city:'123'
-//     },
-//     {
-//         name:'asd',
-//         city:'123'
-//     },
-//     {
-//         name:'asd',
-//         city:'123'
-//     }
-// ]
-// app.get('/login',(req,res)=>{
-//     res.json(users)
-// })
-//***********************1.05.00
-
-
-            //req-приходит по пути от юзера ( будет лежать тут)   res=Это я Юзеру что то возвращаю
-// app.get('/login',(req,res)=>{
-//         res.send('Hello from poli')
-//     //send,write,json
-// })
-
-
+//************************************************HOMEWORK****************************************************
 
 const express = require('express');
 const path = require('path');
@@ -118,6 +46,7 @@ app.post('/signin',((req, res) => {
     let userId = users.find(user => user.email === req.body.email && user.password === req.body.password);
     if (userId){
         res.redirect(`/users/${userId.id}`);
+        res.json(`${userId.id}`)
     }else {
         res.redirect('/error');
     }
