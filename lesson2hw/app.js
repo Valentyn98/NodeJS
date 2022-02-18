@@ -125,31 +125,31 @@ app.get('/users',(req,res)=>{
     res.render('users',{users: filUsers})
 })
 
-app.get('/signin', (req, res)=>{
-    let emailInfo = users.filter(user => user.email === req.body.email)
-    let passwordInfo = users.filter((user=> user.password === req.body.email))
-    if(emailInfo > 0 && passwordInfo > 0){
-        res.redirect('/signin')
-        res.render('signin')
-    }
-})
+
 app.post('/login',(req,res)=>{
-    let usEm = users.filter(user => user.email === req.body.email)
-    if(usEm.length > 0){
+    let emailInfo = users.filter(user => user.email === req.body.email)
+    // let passwordInfo = users.filter((user=> user.password === req.body.password))
+    // if(emailInfo > 0 && passwordInfo > 0){
+    //     res.redirect('/signin')
+    // }
+    if (emailInfo.length > 0 ){
         res.redirect('/error')
-    }else {
+    } else  {
         users.push(req.body)//все что введем юудем пушить в масив юзеров
         res.redirect('/users')
     }
 })
-
+// app.get('/signin', (req, res)=>{
+//         res.render('signin')
+// })
+// app.use((req, res) =>{
+//     res.redirect('/signin')
+// } )
 app.get('/users/:userId',(req,res)=>{
     console.log(req.params)
     const {userId} = req.params
     res.json(users[userId-1])
 })
-
-
 
 app.get('/error',(req,res)=>{
     res.render('error')
